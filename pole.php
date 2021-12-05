@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,36 +7,64 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
+    <?php 
 
-        //$mesice = array("leden", "unor", "brezen");
-        $mesice = ["leden", "unor", "brezen"];
-
-       var_dump($mesice);
-
-       echo"Druhy mesic v roce je ";
-       echo $mesice [1];
+        //promenna, kterou jsem dal do pole 
+        $badass = "Matysek";
 
 
-       //prodani polozky do pole
-       $mesice [] = "duben";
-       $mesice [] = "kveten";
-       $mesice [] = "cerven";
-       var_dump($mesice);
+        //vytvoreni pole 
+        $pole = ["Pricenzna Zvejka", 
+                "Pes Matysek", 
+                "Nejlepsi Bulbasaur",
+                $badass];
 
-       //odebirani polozek 
+        //uprava pole s hodnotou nula
+        $pole[0] = "Skuncik";
 
-       unset($mesice[1]);
-       var_dump($mesice);
+        //kdyz nemachm zavorky prazdne zadana vec se priradi na konec 
+        $pole[] = "PteroPes";
+
+        //unset dokaze odstranit hodnotu z pole
+        unset($pole[4]);
+
+        //usporada prvky podle abecedy
+        sort($pole);
+
+        //usporada opacne
+        rsort($pole);
+
+        //pridani na konec pole, ale muzu i vic najednou
+        array_push($pole, "Verca Lstiva Samyce", "Dalsi Lstiva Samyce");
+
+        //odebrani z konce pole (mam to hozene v promenne $kdo abych videl kdo to byl)
+        $kdo = array_pop($pole);
+        echo $kdo;
+
+        //odebrani ze zacatku pole (mam to hozene v promenne $kdo abych videl kdo to byl)
+        $kdo2 = array_shift($pole);
+        echo $kdo2;
+
+        //prihodi novy element na zacatek
+        $pridaniNaZacatek = "Zacatek";
+        array_unshift($pole, $pridaniNaZacatek);
 
 
-       //prochazeni pole pro kazdou polozku
+        //vypis pole 
+        echo "<pre>";
+        print_r($pole);
+        echo "</pre>";
 
-       foreach($mesice as $klic => $mesic)
-       {
-           echo "$klic mesic v roce je $mesic <br>";
-       }
+        //count(); pocita pocet prvku v poli
+        echo count($pole);
 
+
+        /*if ( count($pole)){
+            echo "Yaaay";
+        }else{
+            "Meh";
+        }
+        */
     ?>
 </body>
 </html>
