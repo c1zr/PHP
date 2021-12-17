@@ -7,11 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-
-
-    <?php
-    $vypis = $_POST["jmeno"] + $_POST["vlastnost"];
-    echo $vypis
+    <?php 
+    $soucet = $_POST["cislo1"] + $_POST["cislo2"];
+    echo "Soucet" .$soucet;
     ?>
 </body>
 </html>

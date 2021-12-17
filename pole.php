@@ -7,64 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
+<?php 
 
-        //promenna, kterou jsem dal do pole 
-        $badass = "Matysek";
+$oblibeneVeci = [
+    "homer" => "kobliha",
+    "marge" => "trouba",
+    "bart" => "prak",
+    "liza" => "kniha",
+    "meggie" => "dudlik",
+];
 
+echo "Homer ma rad: " .$oblibeneVeci['homer'];
 
-        //vytvoreni pole 
-        $pole = ["Pricenzna Zvejka", 
-                "Pes Matysek", 
-                "Nejlepsi Bulbasaur",
-                $badass];
+$batoh = ['provaz', 'svítilna', 'peněženka'];
 
-        //uprava pole s hodnotou nula
-        $pole[0] = "Skuncik";
+$batoh2 = [
+    0 => "provaz",
+    1 => "svitilna",
+    2 => "penezenka",
+];
 
-        //kdyz nemachm zavorky prazdne zadana vec se priradi na konec 
-        $pole[] = "PteroPes";
-
-        //unset dokaze odstranit hodnotu z pole
-        unset($pole[4]);
-
-        //usporada prvky podle abecedy
-        sort($pole);
-
-        //usporada opacne
-        rsort($pole);
-
-        //pridani na konec pole, ale muzu i vic najednou
-        array_push($pole, "Verca Lstiva Samyce", "Dalsi Lstiva Samyce");
-
-        //odebrani z konce pole (mam to hozene v promenne $kdo abych videl kdo to byl)
-        $kdo = array_pop($pole);
-        echo $kdo;
-
-        //odebrani ze zacatku pole (mam to hozene v promenne $kdo abych videl kdo to byl)
-        $kdo2 = array_shift($pole);
-        echo $kdo2;
-
-        //prihodi novy element na zacatek
-        $pridaniNaZacatek = "Zacatek";
-        array_unshift($pole, $pridaniNaZacatek);
+print_r($batoh);
+print_r($batoh2);
 
 
-        //vypis pole 
-        echo "<pre>";
-        print_r($pole);
-        echo "</pre>";
-
-        //count(); pocita pocet prvku v poli
-        echo count($pole);
-
-
-        /*if ( count($pole)){
-            echo "Yaaay";
-        }else{
-            "Meh";
-        }
-        */
-    ?>
+?>
 </body>
 </html>
